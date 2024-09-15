@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import Title from './section-title/title.js'
+
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Title />
     </div>
   );
 }
