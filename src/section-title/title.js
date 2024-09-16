@@ -2,6 +2,12 @@ import '../section.css'
 import './title.css'
 
 import './cube.js'
+
+import github from './github.svg'
+import linkedin from './linkedin.svg'
+import spotify from './spotify.svg'
+
+
 import { useState, useEffect } from 'react'
 import asciiframe from './cube.js'
 
@@ -19,11 +25,22 @@ function Title () {
 		return () => clearInterval(renderInterval)
 	}, [cubeText])
 
+	function IconRow () {
+		return (
+			<div className='icon-row'>
+				<img src={github} />
+				<img src={linkedin} />
+				<img src={spotify}></img>
+			</div>
+		)
+	}
+
 	return (
 		<div className="Section">
 			<div className="Section-left">
 				<h1>Michael<br></br>McKinley</h1>
 				<p>Welcome to my portfolio</p>
+				<IconRow />
 			</div>
 
 			<div className="Section-right">

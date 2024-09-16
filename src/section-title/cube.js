@@ -8,9 +8,9 @@ var asciiframe = function () {
   var b = [];
   // Depth of each index of the array
   var zBuffer = [];
-  // Reset the background
-  const width = 38;
-  const height = 38;
+
+  const width = 100;
+  const height = 40;
   for (var k = 0; k < width * height; k++) {
     b[k] = k % width === width - 1 ? "\n" : " ";
     zBuffer[k] = 0;
@@ -20,6 +20,10 @@ var asciiframe = function () {
   A += 0.04;
   B += 0.05;
   C += 0.01;
+  const sideLength = 4 * 2;
+  const step = 0.2;
+  const cubePosition = [0, 3, 3]
+
   renderCube([A, B, C]);
 
   function renderCube(r) {
@@ -36,19 +40,19 @@ var asciiframe = function () {
       normals[i] = rotate(normals[i], r);
     }
 
-    for (var i = -4; i < 4; i += 0.2) {
-      for (var j = -4; j < 4; j += 0.2) {
+    for (var i = -sideLength ; i < sideLength; i += step) {
+      for (var j = -sideLength; j < sideLength; j += step) {
         var points = [
-          [i, 4, j],
-          [i, -4, j],
-          [4, i, j],
-          [-4, i, j],
-          [i, j, 4],
-          [i, j, -4],
+          [i, sideLength, j],
+          [i, -sideLength, j],
+          [sideLength, i, j],
+          [-sideLength, i, j],
+          [i, j, sideLength],
+          [i, j, -sideLength],
         ];
         for (const direction in points) {
           renderPoint(
-            rotate(points[direction], r), // The rotates point
+            rotate(points[direction], r), // The rotated point
             normals[direction], // Its corresponding normal vector
           );
         }
@@ -58,15 +62,15 @@ var asciiframe = function () {
 
   function renderPoint(point, normal) {
     // Points on screen
-    const screenx = 0 | (3 * ((point[0] * 49) / (50 - point[2])) + 19);
-    const screeny = 0 | (19 - 3 * ((point[1] * 49) / (50 - point[2]))) / 2;
+    const screenx = 0 | 30 + (3 * ((point[0] * 49) / (50 - point[2])) + 19);
+    const screeny = 0 | (80 - 3 * ((point[1] * 49) / (50 - point[2]))) / 2;
 
-    if (screeny > 38 || screeny <= 0 || screenx <= 0 || screenx > 36) {
+    if (screeny > height || screeny <= 0 || screenx <= 0 || screenx > width - 2) {
       return;
     }
-    var intersect = screenx + 38 * screeny;
+    var intersect = screenx + width * screeny;
 
-    const lightvec = normalize([10 - point[0], 10 - point[1], 10 - point[2]]);
+    const lightvec = normalize([-20 - point[0], 0 - point[1], 20 - point[2]]);
     const strength = 2.7 ** (-0.02 * lightvec[3]);
     var luminance = 0 | (strength * 11 * dot(lightvec, normal));
 
