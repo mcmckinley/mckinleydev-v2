@@ -1,27 +1,25 @@
-import logo from './logo.svg';
-import Title from './section-title/title.js'
-
 import './App.css';
 
+import Title from './section-title/title.js'
+import DraftStars from './section-draftstars/draftstars.js';
+
+import React, { useEffect } from 'react'
+
+import updateFavicon from './utils/favicon.js';
+
 function App() {
+  // Automatically update the theme based on the user's setting
+  useEffect(() => {
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    console.log(userPrefersDark)
+    console.log('use effect active')
+    updateFavicon(userPrefersDark);
+  }, []);
+
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-
       <Title />
+      <DraftStars />
     </div>
   );
 }
