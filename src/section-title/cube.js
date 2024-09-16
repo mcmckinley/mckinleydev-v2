@@ -10,7 +10,7 @@ var asciiframe = function () {
   var zBuffer = [];
 
   const width = 100;
-  const height = 40;
+  const height = 50;
   for (var k = 0; k < width * height; k++) {
     b[k] = k % width === width - 1 ? "\n" : " ";
     zBuffer[k] = 0;
@@ -22,7 +22,6 @@ var asciiframe = function () {
   C += 0.01;
   const sideLength = 4 * 2;
   const step = 0.2;
-  const cubePosition = [0, 3, 3]
 
   renderCube([A, B, C]);
 
@@ -63,7 +62,7 @@ var asciiframe = function () {
   function renderPoint(point, normal) {
     // Points on screen
     const screenx = 0 | 30 + (3 * ((point[0] * 49) / (50 - point[2])) + 19);
-    const screeny = 0 | (80 - 3 * ((point[1] * 49) / (50 - point[2]))) / 2;
+    const screeny = 0 | (45 - 3 * ((point[1] * 49) / (50 - point[2]))) / 2;
 
     if (screeny > height || screeny <= 0 || screenx <= 0 || screenx > width - 2) {
       return;

@@ -28,9 +28,9 @@ function Title () {
 	function IconRow () {
 		return (
 			<div className='icon-row'>
-				<img src={github} />
-				<img src={linkedin} />
-				<img src={spotify}></img>
+				<img src={github} alt='github' />
+				<img src={linkedin} alt='linkedin' />
+				<img src={spotify} alt='spotify'/>
 			</div>
 		)
 	}
@@ -38,7 +38,7 @@ function Title () {
 	return (
 		<div className="Section">
 			<div className="Section-left">
-				<h1>Michael<br></br>McKinley</h1>
+				<h1 class="Name-text">Michael<br></br>McKinley</h1>
 				<p>Welcome to my portfolio</p>
 				<IconRow />
 			</div>
