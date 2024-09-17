@@ -6,7 +6,6 @@ import CubeDisplay from './cubeDisplay.js'
 import github from './github.svg'
 import linkedin from './linkedin.svg'
 import spotify from './spotify.svg'
-import email from './email.svg'
 
 
 function Title () {
