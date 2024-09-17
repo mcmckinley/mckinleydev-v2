@@ -14,11 +14,16 @@ function DraftStars () {
 				<h1 class="Name-text">Draft Stars</h1>
 				<p>AI Powered, Self Hosted, Full Stack<br />Draft Engine for Brawl Stars</p>
                 <p><em>Not currently available for public use. Contact me for exclusive access.</em></p>
-                <p>Check it out on GitHub</p>
+                <a 
+					href="https://github.com/mcmckinley/DraftStars"
+					className="external-link"
+				>
+					Check it out on GitHub
+				</a>
 			</div>
 
 			<div className="Section-right">
-                <img src={previewImage} alt='Draft Stars Preview'></img>
+                <img className="Draft-stars-preview" src={previewImage} alt='Draft Stars Preview'></img>
 			</div>
 		</div>
 	)

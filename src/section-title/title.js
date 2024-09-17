@@ -1,29 +1,15 @@
 import '../section.css'
 import './title.css'
 
-import './cube.js'
+import CubeDisplay from './cubeDisplay.js'
 
 import github from './github.svg'
 import linkedin from './linkedin.svg'
 import spotify from './spotify.svg'
+import email from './email.svg'
 
-
-import { useState, useEffect } from 'react'
-import asciiframe from './cube.js'
 
 function Title () {
-
-	const [cubeText, setCubeText] = useState('')
-
-	function callRender () {
-		setCubeText(asciiframe());
-	}
-
-	useEffect(() => {
-		var renderInterval = setInterval(callRender, 100)
-
-		return () => clearInterval(renderInterval)
-	}, [cubeText])
 
 	function IconRow () {
 		return (
@@ -34,18 +20,23 @@ function Title () {
 			</div>
 		)
 	}
+	function EmailLink () {
+		return (
+			<p className="email-link">mxmckinley@gmail.com</p>
+		)
+	}
 
 	return (
 		<div className="Section">
 			<div className="Section-left">
-				<h1 class="Name-text">Michael<br></br>McKinley</h1>
-				<p>Welcome to my portfolio</p>
+				<h1 class="Name-text">Michael McKinley</h1>
+				<p>A gallery of my personal projects</p>
 				<IconRow />
+				<EmailLink />
+
 			</div>
 
-			<div className="Section-right">
-				<pre className='Cube'>{cubeText}</pre>
-			</div>
+			<CubeDisplay />
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 // Rotation in each direction
-var A = 0;
+var A = 1;
 var B = 0;
 var C = 0;
 
@@ -17,12 +17,12 @@ var asciiframe = function () {
   }
 
   // Rotate the cube
-  A += 0.04;
-  B += 0.05;
-  C += 0.01;
+  A += 0.025;
+  B += 0.005;
+  C += 0.005;
   const sideLength = 4 * 2;
   const step = 0.2;
-
+  
   renderCube([A, B, C]);
 
   function renderCube(r) {

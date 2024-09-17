@@ -1,0 +1,10 @@
+.Digits-preview {
+    max-height: 1000px;
+}
+
+@media(max-width: 500px){
+    .Digits-preview {
+        max-height: 300px;
+        max-width: 100%;
+    }
+}

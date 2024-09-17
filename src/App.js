@@ -2,6 +2,7 @@ import './App.css';
 
 import Title from './section-title/title.js'
 import DraftStars from './section-draftstars/draftstars.js';
+import DigitsQuiz from './section-digits/digits.js';
 
 import React, { useEffect } from 'react'
 
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Title />
       <DraftStars />
+      <DigitsQuiz />
     </div>
   );
 }
