@@ -13,9 +13,9 @@ function Title () {
 	function IconRow () {
 		return (
 			<div className='icon-row'>
-				<img src={github} alt='github' />
-				<img src={linkedin} alt='linkedin' />
-				<img src={spotify} alt='spotify'/>
+				<a href="https://github.com/mcmckinley" className="icon-link"><img src={github} alt='github' /></a>
+				<a href="https://www.linkedin.com/in/michael-mckinley-891ba0270/" className="icon-link"><img src={linkedin} alt='linkedin' /></a>
+				<a href="https://open.spotify.com/artist/4OqQWgNWGAZI55LECmJA5B?si=af_y_zVHRTqakamjndNvfA" className="icon-link"><img src={spotify} alt='spotify'/></a>
 			</div>
 		)
 	}

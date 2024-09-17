@@ -21,6 +21,12 @@
 
 .icon-row img {
     width: 50px;
+    padding: 5px;
+}
+
+.icon-row img:hover {
+    width: 60px;
+    padding: 0px;
 }
 
 @media(prefers-color-scheme: dark){

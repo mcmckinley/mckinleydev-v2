@@ -2,7 +2,7 @@
   "name": "mckinleydev-v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mcmckinley.github.io/mckinleydev-v2",
+  "homepage": "https://mckinleydev.com",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build",
   "dependencies": {
